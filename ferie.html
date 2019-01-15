@@ -1,0 +1,36 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ferie podkarpacie 2019</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style type="text/css">
+        html, body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding-top: 18vh;
+            font-family: sans-serif;
+         }
+    </style>
+</head>
+<body>
+    <h1>Czas do ferii:</h1>
+    <h2 id="time"></h2>
+    <h4>ms</h4>
+
+    <script>
+        var ferie = new Date(2019, 2, 8, 14, 0, 0).getTime();
+
+        function update() {
+            document.getElementById("time").innerText = ferie - Date.now();
+
+            setTimeout(update, 10);
+        }
+
+        update();
+    </script>
+</body>
+</html>
