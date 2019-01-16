@@ -11,21 +11,31 @@
             background-color: black;
             color: white;
             text-align: center;
-            padding-top: 18vh;
+            padding-top: 15vh;
             font-family: sans-serif;
          }
     </style>
 </head>
 <body>
     <h1>Czas do ferii:</h1>
-    <h2 id="time"></h2>
-    <h4>ms</h4>
+    <h2 id="time-ms"></h2>
+    <h2 id="time-s"></h2>
+    <h2 id="time-m"></h2>
+    <h2 id="time-h"></h2>
+    <h2 id="time-d"></h2>
 
     <script>
-        var ferie = new Date(2019, 2, 8, 14, 0, 0).getTime();
+        var ferie = new Date(2019, 1, 8, 14, 0, 0).getTime();
+        var time = 0;
 
         function update() {
-            document.getElementById("time").innerText = ferie - Date.now();
+            time = ferie - Date.now();
+
+            document.getElementById("time-ms").innerText = time + " ms";
+            document.getElementById("time-s").innerText = Math.floor(time / 1000) + " s";
+            document.getElementById("time-m").innerText = Math.floor(time / 1000 / 60) + " min";
+            document.getElementById("time-h").innerText = Math.floor(time / 1000 / 60 / 60) + " h";
+            document.getElementById("time-d").innerText = Math.floor(time / 1000 / 60 / 60 / 24) + " d";
 
             setTimeout(update, 10);
         }
