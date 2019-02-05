@@ -17,7 +17,7 @@
     </style>
 </head>
 <body>
-    <h1>Czas do ferii:</h1>
+    <h1 id="header">Czas do ferii:</h1>
     <h2 id="time-ms"></h2>
     <h2 id="time-s"></h2>
     <h2 id="time-m"></h2>
@@ -30,6 +30,11 @@
 
         function update() {
             time = ferie - Date.now();
+
+            if (time < 0) {
+                time = 0;
+                document.getElementById("header").innerText = "Czas do ferii: to już!";
+            }
 
             document.getElementById("time-ms").innerText = time + " ms";
             document.getElementById("time-s").innerText = Math.floor(time / 1000) + " s";
