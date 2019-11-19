@@ -1,21 +1,11 @@
 html, body {
     background-color: #000000;
-}
-
-#animation {
-    width: 35vw;
-    height: 7.5vw;
-    background-image: url("logo.png");
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-
     color: #ffffff;
     font-family: sans-serif;
+}
+
+#content {
+    font-size: 8vh;
     text-align: center;
-    font-size: 1.5vw;
-
-    margin-top: 25vh;
-    margin-left: 32.5vw;
-
-    padding-top: 10vw;
+    margin-top: 35vh;
 }
