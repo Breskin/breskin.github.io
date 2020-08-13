@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lista zakupów</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <header id="list-id">
+
+    </header>
+    <h2>
+        Skopiuj je, a następnie kliknij przycisk importu w aplikacji. Pamiętaj, że musisz być zalogowany/a
+    </h2>
+
+    <img id="import-img" src="import.png">
+
+    <h2>
+        Nie masz aplikacji? Pobierz ją
+    </h2>
+
+    <script>
+        window.onload = () => {
+            let addr = document.location.href
+            let idIndex = addr.indexOf("id=")
+
+            if (idIndex != -1) {
+                let id = addr.substr(idIndex + 3)
+                let regex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[089ab][0-9a-f]{3}-[0-9a-f]{12}$/i
+
+                if (regex.test(id))
+                    document.getElementById("list-id").innerText = "Id listy: " + id
+                else
+                    document.getElementById("list-id").innerText = "Podane id wydaje się niewłaściwe i może nie działać poprawnie: " + id
+            }
+        }
+    </script>
+</body>
+
+</html>
